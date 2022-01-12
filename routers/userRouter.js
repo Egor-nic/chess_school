@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const sha256 = require('sha256');
+
 const { Mentor, Student } = require('../db/models');
 
 router.get('/mentor/register', (req, res) => {
@@ -6,11 +8,18 @@ router.get('/mentor/register', (req, res) => {
 })
 
 router.post('/mentor/register', async (req, res) => {
-  const { email, password, name, phone } = req.body;
-  const newMentor = await Mentor.create(email, password, name, phone, sha256(password))
-  req.session.name = name;
-  req.session.user_id = user.id;
-  res.redirect(`/user/mentor/${newMentor.id}`)
+  console.log(req.body)
+  try {
+    const { email, password, name, phone } = req.body;
+    const newMentor = await Mentor.create({ email, name, phone, password: sha256(password) })
+    req.session.userName = newMentor.name;
+    req.session.userEmail = newMentor.email;
+    req.session.userId = newMentor.id;
+    res.redirect(`/user/mentor/${newMentor.id}`)
+
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 
@@ -21,15 +30,16 @@ router.get('/student/register', (req, res) => {
 
 router.post('/student/register', async (req, res) => {
   const { studentName, parentName, studentAge, phone, email, password } = req.body;
-  const student = await student.create(studentName, parentName, studentAge, phone, email, sha256(password))
-  req.session.name = name;
-  req.session.user_id = user.id;
+  const student = await Student.create({ studentName, parentName, studentAge, phone, email, password: sha256(password) })
+  req.session.userName = student.name;
+  req.session.userEmail = student.email;
+  req.session.userId = student.id;
   res.redirect(`/user/children/${student.id}`)
 })
 
-router.get('/sign in', (req, res) => {
-  res.render
-})
+// router.get('/sign in', (req, res) => {
+//   // res.render
+// })
 
 
 // router.get('/student/register/lesson', (req, res) => {
@@ -42,18 +52,18 @@ router.get('/sign in', (req, res) => {
 
 
 
-router.get('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/')
-})
+// router.get('/logout', (req, res) => {
+//   req.session.destroy();
+//   res.redirect('/')
+// })
 
 
-router.get('/user/mentor/:id', async (req, res) => {
+router.get('/mentor/:id', async (req, res) => {
   const admin = await Mentor.findByPk(req.params.id)
   res.render('mentorPage', { admin })
 })
 
-router.get('/user/children/:id', async (req, res) => {
+router.get('/children/:id', async (req, res) => {
   const student = await Student.findByPk(req.params.id)
   res.render('studentPage', { student })
 })

@@ -1,14 +1,14 @@
 <h1>регистрация без пробного урока</h1>
 
-<form action="">
+<form action="/user/student/register" method="post">
 
-  <input type="text" placeholder="ФИО" name="">
-  <input type="email" placeholder="email" name="">
-  <input type="password" placeholder="password" name="">
-  <input type="text" placeholder="phone" name="">
-  <input type="text" placeholder="ФИО родителя" name="">
-  <input type="text" placeholder="ФИО ребенка" name="">
-  <input type="text" placeholder="дата рождения ребенка" name="">
+  <input type="text" placeholder="ФИО ребенка" name="studentName">
+  <input type="text" placeholder="ФИО родителя" name="parentName">
+  <input type="email" placeholder="email" name="email">
+  <input type="password" placeholder="password" name="password">
+  <input type="text" placeholder="phone" name="phone">
+  <input type="text" placeholder="age" name="studentAge">
+
 
 
   <button type="submit">отправить</button>

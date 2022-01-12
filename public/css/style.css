@@ -1,0 +1,41 @@
+input {
+  max-width: 600px;
+  min-height: 60px;
+  margin-bottom: 50px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  max-width: 100px;
+}
+
+
+.nav {
+}
+
+.header {
+}
+
+.menu-list {
+  display: flex;
+
+}
+
+.menu-list--item {
+  margin-right: 50px;
+
+}

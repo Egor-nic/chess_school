@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <title>Chess School</title>
 </head>
+
 <body>
   
 <header class="header">
@@ -33,11 +38,31 @@
   
   </ul>
 
-</nav>
+  <header class="header">
+    <div class="div_logo">
+      <img id="logo_img" src="/img/logo_mini.png" alt="logo">
+    </div>
 
-</header>
+    <nav class="nav">
+      <ul class="menu-list">
+        <li class="menu-list--item">
+        <li class="menu-list--item">
+          <a href="/">главная</a>
+        <li class="menu-list--item">
+          <a href="/user/sign in">войти</a>
+        </li>
+        {{!-- <li class="menu-list--item">
+          <a href="/user/logout">выйти</a>
+        </li> --}}
+      </ul>
+    </nav>
 
+  </header>
 
   {{{body}}}
 </body>
+<footer>
+  <a href="/admin/login">Вход администратора</a>
+</footer>
+
 </html>

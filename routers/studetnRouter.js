@@ -14,32 +14,28 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
   const { studentName, parentName, studentAge, phone, email, password } = req.body;
-  const newStudent = await Student.create({ studentName, parentName, studentAge, phone, email, password: sha256(password) })
-  console.log(newStudent)
-  req.session.userName = newStudent.name;
-  req.session.userEmail = newStudent.email;
-  req.session.userId = newStudent.id;
-  const student = {
-    id: 7,
-    studentName: 'test2',
-    parentName: 'mama',
-    studentAge: 21,
-    phone: '123',
-    email: 'test2@test',
+
+  try {
+    const newStudent = await Student.create({ studentName, parentName, studentAge, phone, email, password: sha256(password) })
+    req.session.userName = newStudent.name;
+    req.session.userEmail = newStudent.email;
+    req.session.userId = newStudent.id;
+    return res.json({id: newStudent.id}).sendStatus(200)
+  } catch (error) {
+    res.sendStatus(500)
   }
-  res.json(student)
 })
 
 
 
-router.post('/edit/:id', async (req, res) => {
+router.put('/edit/:id', async (req, res) => {
   try {
-    const student = await Student.findByPk(req.params.id)
+    const editStudent = await Student.findByPk(req.params.id)
     await Student.update(req.body, { where: { id: req.params.id } });
-    res.redirect(`/student/${student.id}`)
+    res.json({id:editStudent.editStudent}).sendStatus(200)
 
   } catch (error) {
-    console.log(error)
+    res.sendStatus(500)
   }
 })
 

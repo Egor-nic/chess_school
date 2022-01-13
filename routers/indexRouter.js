@@ -24,9 +24,7 @@ router.get('/signin', (req, res) => {
 router.post('/signin', async (req, res) => {
   
   const { email, password } = req.body
-  console.log(email)
   const student = await Student.findOne({ where: { email } });
-  console.log('=====>>>>>>>>>>>>>>>>>>>.',student)
   const mentor = await Mentor.findOne({ where: { email } });
 try {
   if (student) {

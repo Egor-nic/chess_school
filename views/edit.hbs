@@ -1,6 +1,8 @@
+<script defer src="/js/edit.js"></script>
+
 <h1>редактирование страницы </h1>
 
-<form action="/student/edit/{{student.id}}" method="post">
+<form name="editForm" data-id="{{student.id}}">
 
   <input type="text" placeholder="ФИО ребенка" name="studentName" value="">
   <input type="text" placeholder="ФИО родителя" name="parentName" value="">

@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
     req.session.userName = newStudent.name;
     req.session.userEmail = newStudent.email;
     req.session.userId = newStudent.id;
-    return res.json({id: newStudent.id}).sendStatus(200)
+    return res.json({ id: newStudent.id }).sendStatus(200)
   } catch (error) {
     res.sendStatus(500)
   }
@@ -32,7 +32,7 @@ router.put('/edit/:id', async (req, res) => {
   try {
     const editStudent = await Student.findByPk(req.params.id)
     await Student.update(req.body, { where: { id: req.params.id } });
-    res.json({id:editStudent.editStudent}).sendStatus(200)
+    res.json({ id: editStudent.id }).sendStatus(200)
 
   } catch (error) {
     res.sendStatus(500)

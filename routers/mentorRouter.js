@@ -25,7 +25,7 @@ router.post('/register', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const mentor = await Mentor.findByPk(req.params.id)
-  res.render('mentorPage', { admin })
+  res.render('mentorPage', { mentor })
 })
 
 

@@ -22,40 +22,39 @@ router.get('/signin', (req, res) => {
 
 
 router.post('/signin', async (req, res) => {
-  
+
   const { email, password } = req.body
-  console.log(email)
   const student = await Student.findOne({ where: { email } });
-  console.log('=====>>>>>>>>>>>>>>>>>>>.',student)
   const mentor = await Mentor.findOne({ where: { email } });
-try {
-  if (student) {
-    if (student.password === sha256(password)) {
-      req.session.userName = student.name;
-      req.session.userEmail = student.email;
-      req.session.userId = student.id;
-      res.redirect(`/student/${student.id}`)
+  try {
+    if (student) {
+      if (student.password === sha256(password)) {
+        req.session.userName = student.name;
+        req.session.userEmail = student.email;
+        req.session.userId = student.id;
+        res.json({ id: student.id }).sendStatus(200)
+      }
+    } else if (mentor) {
+      if (mentor.password === sha256(password)) {
+        req.session.userName = mentor.name;
+        req.session.userEmail = mentor.email;
+        req.session.userId = mentor.id;
+        res.json({ id: mentor.id }).sendStatus(250)
+      }
+    } else {
+      res.sendStatus(505)
     }
-  } else if (mentor) {
-    if (mentor.password === sha256(password)) {
-      req.session.userName = mentor.name;
-      req.session.userEmail = mentor.email;
-      req.session.userId = mentor.id;
-      res.redirect(`/mentor/${mentor.id}`)
-    }
-  } else {
-    res.send('sorry email does not exist')
+
+  } catch (error) {
+    console.log(error)
   }
-  
-} catch (error) {
-  console.log(error)
-}
 
 })
 
+router.get('/chooseRegister', (req, res) => {
+  res.render('chooseRegister')
+})
 
-
-//test vanezzo
 
 
 module.exports = router;

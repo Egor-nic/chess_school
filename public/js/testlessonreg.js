@@ -12,7 +12,10 @@ $testLessonRegForm.addEventListener('submit', async (e) => {
   })
 
 
-
+  if (res.ok) {
+    window.location = '/';
+    alert(' Спасибо, с вами свяжутся')
+   }
 })
 
 

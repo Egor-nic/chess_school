@@ -20,25 +20,11 @@ router.post('/register', async (req, res) => {
   res.redirect(`/student/${student.id}`)
 })
 
-// router.get('/sign in', (req, res) => {
-//   // res.render
-// })
 
-
-// router.get('/student/register/lesson', (req, res) => {
-//   res.render('studentLessonRegister')
-// })
-
-// router.post('/student/register/lesson', (req, res) => {
-//   res.redirect(`/user/children/${student.id}`)
-// })
-
-
-
-router.get('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/')
+router.get('/edit', (req, res) => {
+  res.render('edit')
 })
+
 
 
 

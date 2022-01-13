@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
   req.session.userName = student.name;
   req.session.userEmail = student.email;
   req.session.userId = student.id;
-  res.redirect(`/user/children/${student.id}`)
+  res.redirect(`/student/${student.id}`)
 })
 
 // router.get('/sign in', (req, res) => {
@@ -43,7 +43,7 @@ router.post('/register', async (req, res) => {
 
 
 
-router.get('/student/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const student = await Student.findByPk(req.params.id)
   res.render('studentPage', { student })
 })

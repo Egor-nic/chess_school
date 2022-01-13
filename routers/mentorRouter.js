@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
     req.session.userName = newMentor.name;
     req.session.userEmail = newMentor.email;
     req.session.userId = newMentor.id;
-    res.redirect(`/user/mentor/${newMentor.id}`)
+    res.redirect(`/mentor/${newMentor.id}`)
 
   } catch (error) {
     console.log(error)

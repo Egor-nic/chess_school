@@ -34,7 +34,7 @@ app.use(session({
 
 
 app.use('/', indexRouter);
-app.use('/user', studentRouter);
+app.use('/student', studentRouter);
 app.use('/mentor', mentorRouter)
 
 

@@ -4,6 +4,9 @@ const { testLesson } = require('../db/models');
 
 
 
+router.get('/register', (req, res) => {
+  res.render('studentLessonRegister')
+})
 
 
 router.get('/register', (req, res) => {

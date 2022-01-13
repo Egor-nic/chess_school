@@ -1,7 +1,7 @@
 {
   "name": "progect1",
   "version": "1.0.0",
-  "description": "",
+  "description": "online chess school",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
@@ -29,5 +29,13 @@
   },
   "devDependencies": {
     "eslint": "^8.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Egor-nic/chess_school.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Egor-nic/chess_school/issues"
+  },
+  "homepage": "https://github.com/Egor-nic/chess_school#readme"
 }

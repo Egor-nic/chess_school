@@ -2,8 +2,8 @@ input {
   max-width: 600px;
   min-height: 60px;
   margin-bottom: 50px;
-  border: 1px solid black;
-  border-radius: 3px;
+  border: 1px solid rgb(219, 59, 59);
+  border-radius: 5px;
 }
 
 ul {

@@ -2,7 +2,7 @@ body {
   background-color: #E5E5E5;
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Zen Kurenaido', sans-serif; */
-  color: green;
+
 
   
   
@@ -57,6 +57,7 @@ form {
 
 .menu-list {
   display: flex;
+  color: black;
 
 }
 
@@ -81,7 +82,7 @@ footer {
 .central_div_1 {
   display: flex;
   flex-direction: row;
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 500%;
   margin-left: -40%;
   
@@ -121,6 +122,7 @@ footer {
 }
 
 .register_div {
+  color: #FFFFFF;
   display:flex;
   width: 700px;
   height: 250px;
@@ -128,6 +130,7 @@ footer {
 }
 
 .test_reg_div {
+  color: #FFFFFF;
   display: flex;
   width:300px; 
   border-radius: 10px;
@@ -137,7 +140,7 @@ footer {
 }
 
 .reg_div {
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   width: 300px;
   border-radius: 10px;

@@ -14,6 +14,7 @@ const { PORT } = process.env ?? 3011;
 const indexRouter = require('./routers/indexRouter');
 const studentRouter = require('./routers/studetnRouter');
 const mentorRouter = require('./routers/mentorRouter');
+const lessonRouter = require('./routers/lessonRouter')
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
@@ -35,7 +36,8 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/student', studentRouter);
-app.use('/mentor', mentorRouter)
+app.use('/mentor', mentorRouter);
+app.use('/lesson', lessonRouter);
 
 
 

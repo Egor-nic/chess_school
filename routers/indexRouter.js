@@ -51,9 +51,10 @@ router.post('/signin', async (req, res) => {
 
 })
 
+router.get('/chooseRegister', (req, res) => {
+  res.render('chooseRegister')
+})
 
-
-//test vanezzo
 
 
 module.exports = router;

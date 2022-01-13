@@ -9,6 +9,7 @@ router.get('/register', (req, res) => {
 })
 
 
+
 router.get('/register', (req, res) => {
   res.render('studentLessonRegister')
 })
@@ -22,6 +23,7 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     res.sendStatus(500)
   }
+
 
 })
 

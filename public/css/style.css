@@ -1,3 +1,31 @@
+body {
+  background-color: #E5E5E5;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+  color: green;
+
+  
+  
+}
+
+#logo_id {
+  margin: 20px;
+  padding: 20px;
+}
+
+.nav {
+  color: black;
+}
+.header {
+  display: flex;
+  max-width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0px 0px 15px 15px;
+  margin: 10px;
+  
+}
+
+
 input {
   max-width: 600px;
   min-height: 60px;
@@ -24,11 +52,7 @@ button {
 }
 
 
-.nav {
-}
 
-.header {
-}
 
 .menu-list {
   display: flex;
@@ -38,4 +62,80 @@ button {
 .menu-list--item {
   margin-right: 50px;
 
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  margin: 10px;
+
+}
+
+/* index */
+
+.central_div {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 100%;
+  max-height: 100%;
+  height: 800px;
+  background-color: #FFFFFF;
+  border-radius: 15px 15px 15px 15px;
+  margin: 10px;
+}
+
+.register_div {
+  display:flex;
+  background-color: burlywood;
+  width: 50%;
+  /* flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly; */
+}
+
+.test_reg_div {
+  display: flex;
+  max-width: ma;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: #eee;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg_div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: #eee;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.regBtn {
+  height: 80px;
+  width: 200px;
+  background-color: rgb(162, 253, 224);
+  border-radius: 10px;
+  color: red;
+}
+
+#logo_img {
+  margin: 20px;
+}
+
+a {
+  color: black;
 }

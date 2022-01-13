@@ -12,6 +12,7 @@ router.get('/register', (req, res) => {
 
 
 router.post('/register', async (req, res) => {
+  console.log(req.body)
   const { studentName, parentName, studentAge, phone, email, password } = req.body;
   const student = await Student.create({ studentName, parentName, studentAge, phone, email, password: sha256(password) })
   req.session.userName = student.name;

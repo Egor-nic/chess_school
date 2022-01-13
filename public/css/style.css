@@ -3,9 +3,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Zen Kurenaido', sans-serif; */
 
-
-  
-  
+}
+#regBtn {
+  color: white;
 }
 
 #logo_id {
@@ -27,9 +27,8 @@ body {
 }
 
 .nav {
-  color: black;
-
-
+  color: rgb(0, 0, 0);
+  font-weight: bold;
   justify-content: stretch;
 }
 
@@ -51,9 +50,6 @@ form {
   flex-direction: column;
 }
 
-/* button {
-  max-width: 100px;
-} */
 
 .menu-list {
   display: flex;
@@ -88,15 +84,6 @@ footer {
   
 }
 
-.central_div_1 {
-  display: flex;
-  flex-direction: row;
-  color: black;
-  font-size: 500%;
-  margin-left: -40%;
-  
-}
-
 .index_main_text {
   margin-left: 5%;
   font-weight: bold;
@@ -116,13 +103,9 @@ footer {
   background-image: url('../img/chessBoard.png');
   background-repeat: no-repeat;
   background-position: right;
-  
-  
-  
 }
 
 .register_div {
-  color: #FFFFFF;
   display:flex;
   width: 700px;
   height: 250px;
@@ -130,7 +113,6 @@ footer {
 }
 
 .test_reg_div {
-  color: #FFFFFF;
   display: flex;
   width:300px; 
   border-radius: 10px;
@@ -140,7 +122,6 @@ footer {
 }
 
 .reg_div {
-  color: #ffffff;
   display: flex;
   width: 300px;
   border-radius: 10px;
@@ -155,10 +136,8 @@ footer {
   width: 100%;
   background-color:  #AC67FC;
   border-radius: 10px;
-  color: white;
   font-size: x-large;
   font-weight: bold;
-  font-family: ;
 }
 
 #logo_img {
@@ -167,9 +146,21 @@ footer {
 
 a {
   color: black;
+  text-decoration: none;
 }
 
+/* test lesson register page */
 
-a {
-  text-decoration: none;
+.testLessonDiv {
+ background-color: white;
+ border-radius: 15px;
+ display: flex;
+ 
+ justify-content: center;
+}
+
+#testLessonRegForm {
+  border-color: #929292;
+  
+  
 }

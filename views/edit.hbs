@@ -1,16 +1,19 @@
-<h1>редактирование страницы</h1>
+<script defer src="/js/edit.js"></script>
 
-<form action="/student/edit" method="post">
+<h1>редактирование страницы </h1>
 
-  <input type="text" placeholder="ФИО ребенка" name="studentName">
-  <input type="text" placeholder="ФИО родителя" name="parentName">
-  <input type="email" placeholder="email" name="email">
-  <input type="password" placeholder="password" name="password">
-  <input type="text" placeholder="phone" name="phone">
-  <input type="text" placeholder="age" name="studentAge">
+<form name="editForm" data-id="{{student.id}}">
+
+  <input type="text" placeholder="ФИО ребенка" name="studentName" value="">
+  <input type="text" placeholder="ФИО родителя" name="parentName" value="">
+  <input type="email" placeholder="email" name="email" value="">
+  <input type="password" placeholder="password" name="password" value="">
+  <input type="text" placeholder="phone" name="phone" value="">
+  <input type="text" placeholder="age" name="studentAge" value="">
 
 
 
   <button type="submit">отправить</button>
+
 
 </form>

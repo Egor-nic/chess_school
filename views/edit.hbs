@@ -1,16 +1,17 @@
-<h1>редактирование страницы</h1>
+<h1>редактирование страницы </h1>
 
-<form action="/student/edit" method="post">
+<form action="/student/edit/{{student.id}}" method="post">
 
-  <input type="text" placeholder="ФИО ребенка" name="studentName">
-  <input type="text" placeholder="ФИО родителя" name="parentName">
-  <input type="email" placeholder="email" name="email">
-  <input type="password" placeholder="password" name="password">
-  <input type="text" placeholder="phone" name="phone">
-  <input type="text" placeholder="age" name="studentAge">
+  <input type="text" placeholder="ФИО ребенка" name="studentName" value="">
+  <input type="text" placeholder="ФИО родителя" name="parentName" value="">
+  <input type="email" placeholder="email" name="email" value="">
+  <input type="password" placeholder="password" name="password" value="">
+  <input type="text" placeholder="phone" name="phone" value="">
+  <input type="text" placeholder="age" name="studentAge" value="">
 
 
 
   <button type="submit">отправить</button>
+
 
 </form>

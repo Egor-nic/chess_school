@@ -14,7 +14,7 @@ const { PORT } = process.env ?? 3011;
 const indexRouter = require('./routers/indexRouter');
 const studentRouter = require('./routers/studetnRouter');
 const mentorRouter = require('./routers/mentorRouter');
-const adminRouter = require('./routers/adminRouter');
+const lessonRouter = require('./routers/lessonRouter')
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
@@ -36,8 +36,13 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/student', studentRouter);
+<<<<<<< HEAD
 app.use('/mentor', mentorRouter)
 app.use('/admin', adminRouter)
+=======
+app.use('/mentor', mentorRouter);
+app.use('/lesson', lessonRouter);
+>>>>>>> 1cd94390f4d5be6ba5ce6a55e06e5a1f8bf63791
 
 
 

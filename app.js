@@ -36,13 +36,8 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/student', studentRouter);
-<<<<<<< HEAD
-app.use('/mentor', mentorRouter)
-app.use('/admin', adminRouter)
-=======
 app.use('/mentor', mentorRouter);
 app.use('/lesson', lessonRouter);
->>>>>>> 1cd94390f4d5be6ba5ce6a55e06e5a1f8bf63791
 
 
 

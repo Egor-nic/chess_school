@@ -6,12 +6,14 @@ const session = require('express-session');
 const process = require('process');
 const FileStore = require('session-file-store')(session);
 
+
 const app = express();
 const cookieParser = require('cookie-parser');
 
 const { PORT } = process.env ?? 3011;
 const indexRouter = require('./routers/indexRouter');
-const userRouter = require('./routers/userRouter');
+const studentRouter = require('./routers/studetnRouter');
+const mentorRouter = require('./routers/mentorRouter');
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +34,8 @@ app.use(session({
 
 
 app.use('/', indexRouter);
-app.use('/user', userRouter);
+app.use('/user', studentRouter);
+app.use('/mentor', mentorRouter)
 
 
 

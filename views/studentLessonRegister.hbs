@@ -1,16 +1,20 @@
-<h1 style="color:  #AC67FC;">Записаться на пробный урок</h1>
-
-<div class="testLessonDiv">
-  <form  id="testLessonRegForm" name="testLessonRegForm">
-
-    <input type="text" placeholder="ФИО" name="name">
-    <input type="email" placeholder="email" name="email">
-    <input type="text" placeholder="phone" name="phone">
-
-    <button type="submit">Отправить</button>
-
-  </form>
+<div class="text_div" style="padding: 10px;">
+  <h1 style="color:  #AC67FC;">Записаться на пробный урок</h1>
 </div>
 
+<div class="testLessonMainDiv">
+  <div class="testLessonDiv">
+    
+    <form id="testLessonRegForm" name="testLessonRegForm">
+
+      <input class="test_lesson_input_form" type="text" placeholder="ФИО" name="name">
+      <input class="test_lesson_input_form" type="email" placeholder="email" name="email">
+      <input class="test_lesson_input_form" type="text" placeholder="phone" name="phone">
+
+      <button id="test_input_button" class="test_lesson_input_form" type="submit">Отправить</button>
+
+    </form>
+  </div>
+</div>
 
 <script defer src="/js/testlessonreg.js"> </script>

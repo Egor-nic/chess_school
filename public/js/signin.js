@@ -14,6 +14,7 @@ $signinForm.addEventListener('submit', async (e) => {
     body: JSON.stringify(formData)
   })
   if (response.ok) {
+
     const { id, role_id } = await response.json();
     if (role_id === 2) {
       window.location = `/student/${id}`;

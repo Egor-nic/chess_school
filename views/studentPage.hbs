@@ -32,11 +32,9 @@
   <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
 
 
-
-  <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
   {{#each userChild}}
-<div class="remChild" data-id="{{this.id}}">
-  <div> <button>удалить</button>
+<div class="remChild">
+  <div> <button data-id="{{this.id}}">удалить</button>
     <p>{{this.name}} </p>
     <p>{{this.age}}</p>
   </div>

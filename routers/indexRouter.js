@@ -32,14 +32,14 @@ router.post('/signin', async (req, res) => {
         req.session.userName = student.name;
         req.session.userEmail = student.email;
         req.session.userId = student.id;
-        res.json({ id: student.id }).sendStatus(200)
+        res.redirect(`/student/${student.id}`)
       }
     } else if (mentor) {
       if (mentor.password === sha256(password)) {
         req.session.userName = mentor.name;
         req.session.userEmail = mentor.email;
         req.session.userId = mentor.id;
-        res.json({ id: mentor.id }).sendStatus(250)
+        res.redirect(`/mentor/${mentor.id}`)
       }
     } else {
       res.sendStatus(505)

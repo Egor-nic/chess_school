@@ -29,10 +29,12 @@ router.post('/register', async (req, res) => {
 
 
 router.put('/edit/:id', async (req, res) => {
+  const { studentName, parentName, studentAge, password, email, phone } = req.body;
+  console.log("________________", req.body)
   try {
     const editStudent = await Student.findByPk(req.params.id)
-    await Student.update(req.body, { where: { id: req.params.id } });
-    res.json({ id: editStudent.id }).sendStatus(200)
+    await Student.update({ studentName, parentName, studentAge, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
+    res.json({ id: editStudent.id })
 
   } catch (error) {
     res.sendStatus(500)
@@ -44,7 +46,7 @@ router.put('/edit/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
   try {
     const student = await Student.findByPk(req.params.id)
-    res.render('edit', { student })
+    res.render('studentEdit', { student })
 
   } catch (error) {
     console.log(error)

@@ -1,22 +1,17 @@
-const user = (req, res, next) => {
-  res.locals.userId = req.session?.userId;
-  if (req.session) {
-    res.locals.userName = req.session.userName;
-  }
-  next()
-
-}
-
-// const checkUser = (req, res, next) => {
-//   // res.locals.userId = req.session?.userId
-//   if (req.session.userId) {
-//     next()
+// const user = (req, res, next) => {
+//   res.locals.userId = req.session?.userId;
+//   if (req.session) {
+//     res.locals.userName = req.session.userName;
 //   }
-//   else {
-//   return res.redirect(`/`)
-//   }
+//   next()
+
 // }
 
+const hellomideleware = (req, res, next) => {
+  res.locals.username = req.session?.name;
+  next();
+};
 
 
-module.exports = { checkUser };
+
+module.exports = { hellomideleware };

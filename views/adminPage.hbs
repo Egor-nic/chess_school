@@ -1,0 +1,13 @@
+<h1>hello {{admin.name}}</h1>
+
+
+
+  {{#each students}}
+  <div class="cardWrapper">
+    <p>{{this.name}}</p>
+    <p>{{this.email}}</p>
+    <p>{{this.phone}}</p>
+  </div>
+  {{/each}}
+
+<a href="/admin/all/students">все студенты</a>

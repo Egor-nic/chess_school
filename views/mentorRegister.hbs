@@ -1,12 +1,23 @@
-<h1>регистрация учителя</h1>
+<div class="text_div" style="padding: 10px;">
+  <h1 style="color:  #AC67FC;">Регистрация преподавателя</h1>
+</div>
 
-<form action="/user/mentor/register" method="post">
+<div class="testLessonMainDiv">
+  <div class="testLessonDiv">
 
-  <input type="text" placeholder="ФИО" name="name">
-  <input type="email" placeholder="email" name="email">
-  <input type="password" placeholder="password" name="password">
-  <input type="text" placeholder="phone" name="phone">
+    <form name="mentorRegForm" action="/mentor/register" method="post">
 
-  <button type="submit">отправить</button>
+      <input class="test_lesson_input_form" type="text" placeholder="ФИО" name="name">
+      <input class="test_lesson_input_form" type="email" placeholder="email" name="email">
+      <input class="test_lesson_input_form" type="password" placeholder="password" name="password">
+      <input class="test_lesson_input_form" type="text" placeholder="phone" name="phone">
 
-</form>
+      <button id="test_input_button" type="submit">отправить</button>
+
+    </form>
+  </div>
+</div>
+
+
+
+<script defer src="/js/mentorreg.js"></script>

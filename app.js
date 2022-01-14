@@ -5,14 +5,20 @@ const path = require('path');
 const session = require('express-session');
 const process = require('process');
 const FileStore = require('session-file-store')(session);
-
+const { user } = require('./middelware/allmiddelware')
 
 const app = express();
 const cookieParser = require('cookie-parser');
 
 const { PORT } = process.env ?? 3011;
+
 const indexRouter = require('./routers/indexRouter');
-const userRouter = require('./routers/userRouter');
+const studentRouter = require('./routers/studetnRouter');
+const mentorRouter = require('./routers/mentorRouter');
+const lessonRouter = require('./routers/lessonRouter');
+const adminRouter = require('./routers/adminRouter');
+
+const { hellomideleware } = require('./middelware/allmiddelware');
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
@@ -30,10 +36,13 @@ app.use(session({
   name: 'auth',
 }));
 
-
+app.use(user);
 
 app.use('/', indexRouter);
-app.use('/user', userRouter);
+app.use('/student', studentRouter);
+app.use('/mentor', mentorRouter);
+app.use('/lesson', lessonRouter);
+app.use('/admin', adminRouter)
 
 
 

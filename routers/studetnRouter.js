@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sha256 = require('sha256');
 
 // const { checkUser } = require('../middelware/allmiddelware');
-const { Student, User, Children } = require('../db/models');
+const { User, Children } = require('../db/models');
 
 
 
@@ -33,7 +33,7 @@ router.put('/edit/:id', async (req, res) => {
   const { name, email, phone, password } = req.body
   try {
     const editStudent = await User.findByPk(req.params.id)
-    await User.update({name, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
+    await User.update({ name, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
     res.json({ id: editStudent.id, role_id: editStudent.role_id }).sendStatus(200)
 
   } catch (error) {
@@ -60,7 +60,18 @@ router.post('/children', async (req, res) => {
     console.log(err)
   }
 
+})
 
+router.delete('/:id', async (req, res) => {
+  const delStudent = await User.findByPk(req.params.id)
+  console.log('======>',delStudent)
+  try {
+    await Children.destroy({ where: { user_id: delStudent.id } })
+    res.sendStatus(201)
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(501)
+  }
 })
 
 
@@ -78,7 +89,9 @@ router.get('/edit/:id', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const student = await User.findByPk(req.params.id)
-  res.render('studentPage', { student })
+  const userChild = await Children.findAll({ where: { user_id: student.id } })
+  console.log(userChild)
+  res.render('studentPage', { student, userChild })
 })
 
 

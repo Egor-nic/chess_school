@@ -2,6 +2,8 @@ const $signinForm = document.forms.signinForm;
 console.log($signinForm);
 
 $signinForm.addEventListener('submit', async (e) => {
+  alert('test')
+
   e.preventDefault();
 
   let formData = Object.fromEntries(new FormData($signinForm));
@@ -11,18 +13,15 @@ $signinForm.addEventListener('submit', async (e) => {
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(formData)
   })
-  if (response.status === 200) {
-    console.log('222')
+  if (response.ok) {
 
-    const { id } = await response.json();
-    console.log(id)
+    const { id, role_id } = await response.json();
+    if (role_id === 2) {
+      window.location = `/student/${id}`;
+    } else if (role_id === 1) {
+      window.location = `/mentor/${id}`;
+    }
 
-    window.location = `/student/${id}`;
-  } else if (response.status === 250) {
-    console.log('111')
-    const { id } = await response.json();
-    console.log(id)
-    window.location = `/mentor/${id}`;
   } else {
     console.log('login error');
   }

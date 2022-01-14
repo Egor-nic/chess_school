@@ -34,7 +34,7 @@ router.post('/signin', async (req, res) => {
         req.session.userEmail = mentor.email;
         req.session.userId = mentor.id;
         req.session.roleId = mentor.role_id
-        res.json({ id: mentor.id, role_id: mentor.role_id }).sendStatus(200)
+        res.json({ id: mentor.id, role_id: mentor.role_id })
       }
     }
     else if (mentor.role_id === 2) {
@@ -42,7 +42,7 @@ router.post('/signin', async (req, res) => {
         req.session.userName = mentor.name;
         req.session.userEmail = mentor.email;
         req.session.userId = mentor.id;
-        res.json({ id: mentor.id , role_id: mentor.role_id}).sendStatus(250)
+        res.json({ id: mentor.id , role_id: mentor.role_id})
       }
     } 
     else {

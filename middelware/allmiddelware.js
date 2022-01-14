@@ -15,7 +15,14 @@ const user = (req, res, next) => {
 //   else {
 //   return res.redirect(`/`)
 //   }
+//   next()
+
 // }
+
+const hellomideleware = (req, res, next) => {
+  res.locals.username = req.session?.name;
+  next();
+};
 
 
 

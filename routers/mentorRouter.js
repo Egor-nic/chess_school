@@ -23,6 +23,33 @@ router.post('/register', async (req, res) => {
 })
 
 
+router.put('/edit/:id', async (req, res) => {
+  const { name,  password, email, phone } = req.body;
+  console.log("________________", req.body)
+  try {
+    const editMentor = await User.findByPk(req.params.id)
+    await User.update({ name, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
+    res.json({ id: editMentor.id, role_id: editMentor.role_id})
+
+  } catch (error) {
+    res.sendStatus(500)
+  }
+})
+
+
+
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const mentor = await User.findByPk(req.params.id)
+    res.render('mentorEdit', { mentor })
+
+  } catch (error) {
+    console.log(error)
+
+  }
+})
+
+
 
 router.get('/:id', async (req, res) => {
   const mentor = await User.findByPk(req.params.id)

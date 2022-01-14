@@ -1,3 +1,4 @@
+<script defer src="/js/removeChild.js"></script>
 <h1>hello {{student.name}}</h1>
 <a href="/student/edit/{{student.id}}">редактирование профиля</a>
 
@@ -6,6 +7,7 @@
 
   <div class="profile-side-menu">
     <a href="#">
+
       <div class="inner_side_div">Мои курсы</div>
     </a>
     <a href="#">
@@ -28,8 +30,18 @@
   <div class="rightDiv">
   <div class="chess-knowledge-test-div"><a href="#"> Пройти тест</a></div>
   <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
-  </div>
 
+
+
+  <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
+  {{#each userChild}}
+<div class="remChild" data-id="{{this.id}}">
+  <div> <button>удалить</button>
+    <p>{{this.name}} </p>
+    <p>{{this.age}}</p>
+  </div>
+</div>
+{{/each}}
 
 
 </div>

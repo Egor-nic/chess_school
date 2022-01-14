@@ -24,16 +24,16 @@
     <nav class="nav">
       <ul class="menu-list">
         <li class="menu-list--item">
-        <li class="menu-list--item">
-          <a href="/">главная</a>
-        <li class="menu-list--item">
-
-          <a href="/signin">войти</a>
-        </li>
-        <li class="menu-list--item">
-          <a href="/logout">выйти</a>
-
-        </li>
+          <a href="/">главная</a></li>
+          {{#if userName}}
+          <li class="menu-list--item">
+          <a href="/logout">выйти</a></li>
+          <li class="menu-list--item">
+          <a href="/student/{{userId}}">{{userName}} - моя страница</a></li>
+          {{else}}
+          <li class="menu-list--item">
+          <a href="/signin">войти</a></li>
+          {{/if}}
       </ul>
     </nav>
 

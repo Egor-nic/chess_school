@@ -1,3 +1,4 @@
+<script defer src="/js/removeChild.js"></script>
 <h1>hello {{student.name}}</h1>
 <a href="/student/edit/{{student.id}}">редактирование профиля</a>
 
@@ -6,17 +7,36 @@
   <div class="chess-knowledge-test-div">Тест на знание ребёнка по темам<a href="#"> Пройти тест</a></div>
 
   <div class="profile-side-menu">
-    <a href="#"><div class="my-courses-div">Мои курсы</div></a>
-    <a href="#"><div class="calendar-div">Календарь</div></a>
-    <a href="#"><div class="chat-div">Чат с преподавателем</div></a>
-    <a href="#"><div class="payment-div">Оплата</div></a>
-    <a href="#"><div class="stats-div">Статистика</div></a>
-    <a href="#"><div class="settings-div">Настройки</div></a>
-    </div>
-
-
-   <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
-
+    <a href="#">
+      <div class="my-courses-div">Мои курсы</div>
+    </a>
+    <a href="#">
+      <div class="calendar-div">Календарь</div>
+    </a>
+    <a href="#">
+      <div class="chat-div">Чат с преподавателем</div>
+    </a>
+    <a href="#">
+      <div class="payment-div">Оплата</div>
+    </a>
+    <a href="#">
+      <div class="stats-div">Статистика</div>
+    </a>
+    <a href="#">
+      <div class="settings-div">Настройки</div>
+    </a>
   </div>
 
 
+  <div> <a href="/student/children/{{student.id}}">Добавить ребёнка</a></div>
+  {{#each userChild}}
+<div class="remChild" data-id="{{this.id}}">
+  <div> <button>удалить</button>
+    <p>{{this.name}} </p>
+    <p>{{this.age}}</p>
+  </div>
+</div>
+{{/each}}
+
+
+</div>

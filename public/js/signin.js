@@ -1,20 +1,11 @@
-// const $signinForm = document.forms.signinForm;
-// console.log($signinForm);
+const $signinForm = document.forms.signinForm;
+console.log($signinForm);
 
-// $signinForm.addEventListener('submit', async (e) => {
-//   e.preventDefault();
+$signinForm.addEventListener('submit', async (e) => {
+  alert('test')
 
-<<<<<<< HEAD
-//   let formData = Object.fromEntries(new FormData($signinForm));
-//   // console.log(formData);
-//   const response = await fetch("/signin", {
-//     method: "POST",
-//     headers: { 'Content-Type': 'application/json;charset=utf-8' },
-//     body: JSON.stringify(formData)
-//   })
-//   if (response.status === Number(200)) {
-//     console.log('222')
-=======
+  e.preventDefault();
+
   let formData = Object.fromEntries(new FormData($signinForm));
   // console.log(formData);
   const response = await fetch("/signin", {
@@ -22,33 +13,15 @@
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(formData)
   })
-  if (response.status === 200) {
-    console.log('222')
->>>>>>> 69770851a0ee329c7ba311bd28affa5de4c5a9cb
+  if (response.ok) {
+    const { id, role_id } = await response.json();
+    if (role_id === 2) {
+      window.location = `/student/${id}`;
+    } else if (role_id === 1) {
+      window.location = `/mentor/${id}`;
+    }
 
-//     const { id } = await response.json();
-//     console.log(id)
-
-<<<<<<< HEAD
-//     window.location = `/student/${id}`;
-//   } else if (response.status === Number(250)) {
-//     console.log('111')
-//     const { id } = await response.json();
-//     console.log(id)
-//     window.location = `/mentor/${id}`;
-//   } else {
-//     console.log('login error');
-//   }
-// })
-=======
-    window.location = `/student/${id}`;
-  } else if (response.status === 250) {
-    console.log('111')
-    const { id } = await response.json();
-    console.log(id)
-    window.location = `/mentor/${id}`;
   } else {
     console.log('login error');
   }
 })
->>>>>>> 69770851a0ee329c7ba311bd28affa5de4c5a9cb

@@ -27,9 +27,9 @@ router.put('/edit/:id', async (req, res) => {
   const { name,  password, email, phone } = req.body;
   console.log("________________", req.body)
   try {
-    const editMentor = await Mentor.findByPk(req.params.id)
-    await Mentor.update({ name, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
-    res.json({ id: editMentor.id })
+    const editMentor = await User.findByPk(req.params.id)
+    await User.update({ name, email, phone, password: sha256(password) }, { where: { id: req.params.id } });
+    res.json({ id: editMentor.id, role_id: editMentor.role_id})
 
   } catch (error) {
     res.sendStatus(500)
@@ -40,7 +40,7 @@ router.put('/edit/:id', async (req, res) => {
 
 router.get('/edit/:id', async (req, res) => {
   try {
-    const mentor = await Mentor.findByPk(req.params.id)
+    const mentor = await User.findByPk(req.params.id)
     res.render('mentorEdit', { mentor })
 
   } catch (error) {

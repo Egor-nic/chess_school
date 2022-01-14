@@ -18,9 +18,12 @@ $editForm.addEventListener('submit', async (e) => {
     body: JSON.stringify(formData)
   })
   if (res.ok) {
-    const { id } = await res.json();
-    window.location = `/student/${id}`
+    const { id, role_id } = await res.json();
+    if (role_id === 2) {
+      window.location = `/student/${id}`
+    }
+
   } else {
-    console.oog('errrr')
+    console.log('errrr')
   }
 })

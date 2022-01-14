@@ -7,12 +7,10 @@ body {
 #regBtn {
   color: white;
 }
-
 #logo_id {
   margin: 20px;
   padding: 20px;
 }
-
 .header {
   display: flex;
   max-width: 100%;
@@ -25,13 +23,11 @@ body {
 .div_logo {
   justify-content: flex-start;
 }
-
 .nav {
   color: rgb(0, 0, 0);
   font-weight: bold;
   justify-content: stretch;
 }
-
 input {
   max-width: 600px;
   min-height: 60px;
@@ -39,29 +35,21 @@ input {
   border: 1px solid rgb(219, 59, 59);
   border-radius: 5px;
 }
-
 ul {
   list-style: none;
 }
-
-
 form {
   display: flex;
   flex-direction: column;
 }
-
-
 .menu-list {
   display: flex;
   color: black;
-
 }
-
 .menu-list--item {
   margin-right: 50px;
 
 }
-
 footer {
   display: flex;
   width: 100%;
@@ -83,12 +71,10 @@ footer {
   margin-left: -40%;
   
 }
-
 .index_main_text {
   margin-left: 5%;
   font-weight: bold;
 }
-
 .central_div {
   display:flex;
   flex-direction: column;
@@ -104,14 +90,18 @@ footer {
   background-repeat: no-repeat;
   background-position: right;
 }
-
+.choose_main_div {
+  display:flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
 .register_div {
   display:flex;
-  width: 700px;
+  justify-content: center;
+  flex-direction: row;
   height: 250px;
-  justify-content: space-evenly;
 }
-
 .test_reg_div {
   display: flex;
   width:300px; 
@@ -120,7 +110,6 @@ footer {
   align-items: center;
 
 }
-
 .reg_div {
   display: flex;
   width: 300px;
@@ -129,38 +118,127 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
 .regBtn {
   border: 0px;
   height: 60%;
   width: 100%;
-  background-color:  #AC67FC;
+  background-color:  #ac67fc;
   border-radius: 10px;
   font-size: x-large;
   font-weight: bold;
 }
-
 #logo_img {
   margin: 20px;
 }
-
 a {
   color: black;
   text-decoration: none;
 }
 
-/* test lesson register page */
-
+/* test lesson register page - stydentLessonRegister.hbs */
+.testLessonMainDiv {
+  display: flex;
+  min-height: 600px;
+  margin: 0 20% 0 20%;
+  justify-content:center;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+}
 .testLessonDiv {
+ display: flex;
+ flex-direction:column;
+ justify-content:space-around;
+
  background-color: white;
  border-radius: 15px;
  display: flex;
+ width:50%;
  
  justify-content: center;
 }
-
-#testLessonRegForm {
-  border-color: #929292;
-  
-  
+#testLessonRegForm {  
+  display: flex;
+  align-items: center;
 }
+.test_lesson_input_form {
+  border-color: #929292;
+ 
+  width: 100%;
+}
+#test_input_button {
+  
+  border-radius: 5px;
+  border:0px;
+  margin: 5%;
+  min-height: 40px;
+  color: #ac67fc;
+  font-size: x-large;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* CHESS GAME PAGE */
+.chess_game_div {
+  display: flex;
+  justify-content:space-between;
+  border-radius: 15px 15px 15px 15px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+}
+#chessboard {
+  width: 100%;
+
+}
+.player_div {
+margin: 15px;
+width: 50%;
+padding: 10px;
+border-radius: 5px;
+text-align: center;
+color: #000000;
+font-size: xx-large;
+font-weight:bolder;
+background-color: #929292;
+}
+
+/* Страница регистрации - chooseRegister.hbs */
+
+
+.register_div {
+  display: flex;
+  margin: 0% 20% 0 20%;
+  font-size: 30px;
+
+}
+.ChooseregBtn {
+
+  border: 0px;
+  border-radius: 15px;
+  height: 100px;
+  font-size: large;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+.test_lesson_input_form2 {
+  border-color: #929292;
+  margin: 5%;
+  width: 100%;
+}
+
+/* Страница выбора программ обучения - programmesList.hbs */
+
+.prog-choose_div {
+  padding: 5%;
+  border-radius: 15px;
+  font-size: x-large;
+  font-weight: bolder;
+  color: #ffffff;
+}
+.testLessonMainDiv {
+  background-color: brown;
+  background-image: url('../img/chess_for_test_lesson.jpg');
+}
+
+

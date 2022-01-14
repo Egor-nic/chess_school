@@ -8,6 +8,9 @@ router.get('/register', (req, res) => {
   res.render('studentLessonRegister')
 })
 
+router.get('/playgame', (req, res) => {
+  res.render('chessGamePage')
+})
 
 
 router.get('/register', (req, res) => {
@@ -19,7 +22,7 @@ router.post('/register', async (req, res) => {
 
   try {
     const newEntriy = await TestLesson.create({ name, email, phone });
-    res.json(newEntriy).sendStatus(200)
+    res.json(newEntriy ).sendStatus(200)
   } catch (error) {
     res.sendStatus(500)
   }

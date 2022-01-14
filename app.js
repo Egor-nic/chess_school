@@ -5,7 +5,7 @@ const path = require('path');
 const session = require('express-session');
 const process = require('process');
 const FileStore = require('session-file-store')(session);
-
+const { user } = require('./middelware/allmiddelware')
 
 const app = express();
 const cookieParser = require('cookie-parser');
@@ -36,7 +36,7 @@ app.use(session({
   name: 'auth',
 }));
 
-app.use(hellomideleware);
+app.use(user);
 
 app.use('/', indexRouter);
 app.use('/student', studentRouter);

@@ -135,6 +135,13 @@ a {
   text-decoration: none;
 }
 
+.prog_chooser_div_main {
+  color: aliceblue;
+  margin: 20px;
+  width: 80%;
+  height: 30%;
+}
+
 /* test lesson register page - stydentLessonRegister.hbs */
 .testLessonMainDiv {
   display: flex;
@@ -149,6 +156,7 @@ a {
  display: flex;
  flex-direction:column;
  justify-content:space-around;
+ margin-bottom: 5%;
 
  background-color: white;
  border-radius: 15px;
@@ -236,9 +244,11 @@ background-color: #929292;
   font-weight: bolder;
   color: #ffffff;
 }
-.testLessonMainDiv {
-  background-color: brown;
-  background-image: url('../img/chess_for_test_lesson.jpg');
+#prog_choose_img {
+  
+  background-image : url('../img/wooden_chess.jpg');
+  background-position: 0% 220%;
+  background-repeat: repeat-x;
 }
 
 

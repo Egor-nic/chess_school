@@ -1,19 +1,24 @@
-<script defer src="/js/studentRegistration.js"></script>
-<h1>регистрация без пробного урока</h1>
 
-<form name="regForm" action="/student/register" method="post">
+<div class="text_div" style="padding: 10px;">
+  <h1 style="color:  #AC67FC;">Регистрация ученика</h1>
+</div>
 
-  <input type="text" placeholder="ФИО ребенка" name="studentName">
-  <input type="text" placeholder="ФИО родителя" name="parentName">
-  <input type="email" placeholder="email" name="email">
-  <input type="password" placeholder="password" name="password">
-  <input type="text" placeholder="phone" name="phone">
-  <input type="text" placeholder="age" name="studentAge">
+<div class="testLessonMainDiv">
+  <div class="testLessonDiv">
+    <form name="regForm" action="/student/register" method="post">
 
+      <input class="test_lesson_input_form2" type="text" placeholder="ФИО ребенка" name="studentName">
+      <input class="test_lesson_input_form2" type="text" placeholder="ФИО родителя" name="parentName">
+      <input class="test_lesson_input_form2" type="email" placeholder="email" name="email">
+      <input class="test_lesson_input_form2" type="password" placeholder="password" name="password">
+      <input class="test_lesson_input_form2" type="text" placeholder="phone" name="phone">
+      <input class="test_lesson_input_form2" type="text" placeholder="age" name="studentAge">
+      
+      <button id="test_input_button" type="submit">отправить</button>
 
-
-  <button type="submit">отправить</button>
-
-</form>
+    </form>
+  </div>
+</div>
 
 <script defer src="/js/studentreg.js"></script>
+

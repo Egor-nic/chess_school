@@ -8,6 +8,9 @@ router.get('/register', (req, res) => {
   res.render('studentLessonRegister')
 })
 
+router.get('/playgame', (req, res) => {
+  res.render('chessGamePage')
+})
 
 
 router.get('/register', (req, res) => {

@@ -56,5 +56,10 @@ router.get('/chooseRegister', (req, res) => {
 })
 
 
+router.get('/programmesList', (req, res) => {
+  res.render('programmesList')
+})
+
+
 
 module.exports = router;

@@ -16,8 +16,9 @@ const indexRouter = require('./routers/indexRouter');
 const studentRouter = require('./routers/studetnRouter');
 const mentorRouter = require('./routers/mentorRouter');
 const lessonRouter = require('./routers/lessonRouter');
+const adminRouter = require('./routers/adminRouter');
 
-// const { checkUser } = require('./middelware/allmiddelware');
+const { hellomideleware } = require('./middelware/allmiddelware');
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
@@ -41,6 +42,7 @@ app.use('/', indexRouter);
 app.use('/student', studentRouter);
 app.use('/mentor', mentorRouter);
 app.use('/lesson', lessonRouter);
+app.use('/admin', adminRouter)
 
 
 

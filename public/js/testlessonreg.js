@@ -1,5 +1,5 @@
 const $testLessonRegForm = document.forms.testLessonRegForm;
-// console.log($testLessonRegForm);
+
 $testLessonRegForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -11,12 +11,11 @@ $testLessonRegForm.addEventListener('submit', async (e) => {
     body: JSON.stringify(myFormData)
   })
 
+
   if (res.ok) {
     window.location = '/';
     alert(' Спасибо, с вами свяжутся')
    }
-
-  // console.log('---->>>', myFormData);
 })
 
 

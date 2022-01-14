@@ -10,17 +10,17 @@ module.exports = {
       },
       mentor_id: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "Mentors",
-          key: "id"
-        },
+        // references: {
+        //   model: "Mentors",
+        //   key: "id"
+        // },
       },
       student_id: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "Students",
-          key: "id"
-        },
+        // references: {
+        //   model: "Students",
+        //   key: "id"
+        // },
       },
       lesson_date: {
         type: Sequelize.DATE

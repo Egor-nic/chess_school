@@ -11,14 +11,14 @@ $signinForm.addEventListener('submit', async (e) => {
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(formData)
   })
-  if (response.status === Number(200)) {
+  if (response.status === 200) {
     console.log('222')
 
     const { id } = await response.json();
     console.log(id)
 
     window.location = `/student/${id}`;
-  } else if (response.status === Number(250)) {
+  } else if (response.status === 250) {
     console.log('111')
     const { id } = await response.json();
     console.log(id)

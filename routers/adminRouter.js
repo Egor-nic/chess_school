@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Admin, TestLesson, Student } = require('../db/models');
+const { Admin, TestLesson, User } = require('../db/models');
 
 
 router.get('/', async (req, res) => {
-  const admin = await Admin.findOne({ where: { id: 2 } })
+  const admin = await Admin.findOne();
   const students = await TestLesson.findAll()
   // console.log(admin)
   // console.log(students)
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/all/students', async (req, res) => {
-  const allStudents = await Student.findAll();
+  const allStudents = await User.findAll();
   console.log(allStudents)
   res.render('allStudents', { allStudents });
 })

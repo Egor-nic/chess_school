@@ -4,9 +4,7 @@ const { TestLesson } = require('../db/models');
 
 
 
-router.get('/register', (req, res) => {
-  res.render('studentLessonRegister')
-})
+
 
 router.get('/playgame', (req, res) => {
   res.render('chessGamePage')
@@ -22,9 +20,9 @@ router.post('/register', async (req, res) => {
 
   try {
     const newEntriy = await TestLesson.create({ name, email, phone });
-    res.json(newEntriy ).sendStatus(200)
+    res.redirect('/admin')
   } catch (error) {
-    res.sendStatus(500)
+    res.send('sorry')
   }
 
 

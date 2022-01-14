@@ -1,7 +1,8 @@
 <script defer src="/js/mentorEdit.js"></script>
 
 <h1>редактирование страницы {{mentor.name}}</h1>
-
+<div class="testLessonMainDiv">
+  <div class="testLessonDiv">
 <form name="editFormMentor" data-id="{{mentor.id}}">
 
   <input type="text" placeholder="ФИО" name="name" value="">
@@ -10,7 +11,9 @@
   <input type="text" placeholder="phone" name="phone" value="">
 
 
-  <button type="submit">отправить</button>
+  <button id="test_input_button" type="submit">отправить</button>
 
 
 </form>
+  </div>
+</div>

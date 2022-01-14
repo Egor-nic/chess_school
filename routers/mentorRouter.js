@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
     req.session.userEmail = newMentor.email;
     req.session.userId = newMentor.id;
     req.session.roleId = 1
-    return res.json({id: newMentor.id}).sendStatus(200)
+    return res.json({id: newMentor.id})
   } catch (error) {
     res.sendStatus(500)
   }

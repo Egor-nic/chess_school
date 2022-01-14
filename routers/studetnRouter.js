@@ -21,7 +21,7 @@ router.post('/register', async (req, res) => {
     req.session.userEmail = newStudent.email;
     req.session.userId = newStudent.id;
     req.session.roleId = 2;
-    return res.json({ id: newStudent.id }).sendStatus(200)
+    return res.json({ id: newStudent.id })
   } catch (error) {
     res.sendStatus(500)
   }
@@ -78,7 +78,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
   try {
     const student = await User.findByPk(req.params.id)
-    res.render('edit', { student })
+    res.render('studentEdit', { student })
 
   } catch (error) {
     console.log(error)
